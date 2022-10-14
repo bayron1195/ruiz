@@ -16,10 +16,8 @@ public class Library implements Serializable {
     private String target;
     private String description;
     @ManyToOne
-    @JoinColumn(name = "clientId")
-    @JoinColumn(name = "categoryID")
-    @JsonIgnoreProperties("audiences")
-    private Client client;
+    @JoinColumn(name = "categoryId")
+    @JsonIgnoreProperties("libs")
     private Category category;
 
     public Integer getId() {
@@ -54,17 +52,6 @@ public class Library implements Serializable {
         this.description = description;
     }
 
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
-    }
-
-
-
-
     public Category getCategory() {
         return category;
     }
@@ -72,6 +59,4 @@ public class Library implements Serializable {
     public void setCategory(Category category) {
         this.category = category;
     }
-
-
 }
