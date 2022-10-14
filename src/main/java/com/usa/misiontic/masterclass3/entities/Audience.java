@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
 
+
 @Entity
 @Table(name = "audience")
 public class Audience implements Serializable {
@@ -23,6 +24,12 @@ public class Audience implements Serializable {
     @JsonIgnoreProperties("libs")
     private Category category;
 
+
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
+    private List<Message> messages;
+
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
+    private List<Reservas> reservations;
 
 
     public Integer getId() {
