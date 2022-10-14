@@ -60,4 +60,17 @@ public class Library implements Serializable {
     public void setClient(Client client) {
         this.client = client;
     }
+
+
+
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
+    }
+
+
 }
