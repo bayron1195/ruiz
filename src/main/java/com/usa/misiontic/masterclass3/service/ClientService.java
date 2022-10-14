@@ -1,8 +1,7 @@
 package com.usa.misiontic.masterclass3.service;
 
-import com.usa.misiontic.masterclass3.entities.Category;
+
 import com.usa.misiontic.masterclass3.entities.Client;
-import com.usa.misiontic.masterclass3.repository.CategoryRepository;
 import com.usa.misiontic.masterclass3.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
