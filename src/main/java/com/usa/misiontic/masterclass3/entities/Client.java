@@ -21,6 +21,9 @@ public class Client implements Serializable {
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
     private List<Reservas> reservations;
+    private List<Message> message;
+
+
 
     public Integer getIdClient() {
         return idClient;

@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "library")
@@ -21,6 +22,8 @@ public class Audience implements Serializable {
     @JoinColumn(name = "categoryId")
     @JsonIgnoreProperties("libs")
     private Category category;
+    private List<Message> message;
+    private List<Reservas> reservations;
 
     public Integer getId() {
         return id;
@@ -66,7 +69,7 @@ public class Audience implements Serializable {
         return capacity;
     }
 
-    public void setCapacity(Integer Capacity) {
+    public void setCapacity(Integer capacity) {
         this.capacity = capacity;
     }
 }
