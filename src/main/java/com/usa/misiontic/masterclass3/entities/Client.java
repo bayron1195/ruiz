@@ -1,5 +1,7 @@
 package com.usa.misiontic.masterclass3.entities;
 
+import jdk.internal.joptsimple.internal.Messages;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -17,14 +19,10 @@ public class Client implements Serializable {
     private String email;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
-    private List<Message> messages;
+    private List<Message> message;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
-    private List<Reservas> reservations;
-
-
-
-
+    private List<Reservas> reservas;
 
 
 
@@ -66,5 +64,23 @@ public class Client implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+
+    public List<Message> getMessage() {
+        return message;
+    }
+
+    public void setMessage(List<Message> message) {
+        this.message = message;
+    }
+
+
+    public List<Reservas> getreservas() {
+        return reservas;
+    }
+
+    public void setreservas(List<Reservas> reservas) {
+        this.reservas = reservas;
     }
 }
