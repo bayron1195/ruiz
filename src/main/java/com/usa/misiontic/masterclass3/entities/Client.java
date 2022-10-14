@@ -1,9 +1,8 @@
 package com.usa.misiontic.masterclass3.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "client")
@@ -16,6 +15,12 @@ public class Client implements Serializable {
     private Integer age;
     private String password;
     private String email;
+
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
+    private List<Message> messages;
+
+    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
+    private List<Reservas> reservations;
 
     public Integer getIdClient() {
         return idClient;
