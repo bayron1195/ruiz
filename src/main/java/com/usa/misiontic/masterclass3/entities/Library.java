@@ -20,6 +20,7 @@ public class Library implements Serializable {
     @JoinColumn(name = "categoryID")
     @JsonIgnoreProperties("audiences")
     private Client client;
+    private Category category;
 
     public Integer getId() {
         return id;
