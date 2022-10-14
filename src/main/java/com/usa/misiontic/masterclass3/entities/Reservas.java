@@ -12,23 +12,23 @@ public class Reservas implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idReserva;
+    private Integer id;
     private String palco;
     private String cliente;
     private Date fechainicio;
     private Date fechafin;
 
     @ManyToOne
-    @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("reservas")
-    private Category category;
+    @JoinColumn(name = "clientIId")
+    @JsonIgnoreProperties("reser")
+    private Client client;
 
-    public Integer getIdReserva() {
-        return idReserva;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdReserva(Integer id) {
-        this.idReserva = id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getPalco() {
@@ -63,11 +63,11 @@ public class Reservas implements Serializable {
         this.fechafin = fechafin;
     }
 
-    public Category getCategory() {
-        return category;
+    public Client getClient() {
+        return client;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setClient(Client client) {
+        this.client = client;
     }
 }
