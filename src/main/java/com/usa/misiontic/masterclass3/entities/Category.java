@@ -12,7 +12,7 @@ public class Category implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idCategory;
     private String name;
     private String description;
 
@@ -27,12 +27,12 @@ public class Category implements Serializable {
 
 
 
-    public Integer getIdCategory() {
-        return id;
+    public Integer getId() {
+        return idCategory;
     }
 
-    public void setIdCategory(Integer id) {
-        this.id = id;
+    public void setId(Integer id) {
+        this.idCategory = id;
     }
 
     public String getName() {
