@@ -18,7 +18,7 @@ public class Category implements Serializable {
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
     @JsonIgnoreProperties("category")
-    private List<Library> audiences;
+    private List<Audience> audiences;
 
 
 
@@ -50,11 +50,11 @@ public class Category implements Serializable {
         this.description = description;
     }
 
-    public List<Library> getaudiences() {
+    public List<Audience> getaudiences() {
         return audiences;
     }
 
-    public void setaudiences(List<Library> audiences) {
+    public void setaudiences(List<Audience> audiences) {
         this.audiences = audiences;
     }
 

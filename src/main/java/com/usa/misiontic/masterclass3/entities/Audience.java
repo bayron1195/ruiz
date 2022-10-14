@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "library")
-public class Library implements Serializable {
+public class Audience implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

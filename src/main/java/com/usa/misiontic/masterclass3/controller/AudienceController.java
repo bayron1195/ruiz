@@ -1,8 +1,8 @@
 package com.usa.misiontic.masterclass3.controller;
 
 
-import com.usa.misiontic.masterclass3.entities.Library;
-import com.usa.misiontic.masterclass3.service.LibraryService;
+import com.usa.misiontic.masterclass3.entities.Audience;
+import com.usa.misiontic.masterclass3.service.AudienceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -11,18 +11,18 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/Audience")
-public class LibraryController {
+public class AudienceController {
 
     @Autowired
-    private LibraryService libraryService;
+    private AudienceService audienceService;
 
     @GetMapping("/all")
-    public List<Library> getAll(){
-        return libraryService.getAll();
+    public List<Audience> getAll(){
+        return audienceService.getAll();
     }
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Library save(@RequestBody  Library p){
-        return libraryService.save(p);
+    public Audience save(@RequestBody Audience p){
+        return audienceService.save(p);
     }
 }
