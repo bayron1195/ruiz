@@ -43,8 +43,8 @@ public class LibraryService {
                 if(p.getDescription()!=null){
                     q.get().setDescription(p.getDescription());
                 }
-                if(p.getTarget()!=null){
-                    q.get().setTarget(p.getTarget());
+                if(p.getOwer()!=null){
+                    q.get().setOwer(p.getOwer());
                 }
                 if(p.getCategory()!=null){
                     q.get().setCategory(p.getCategory());

@@ -13,7 +13,7 @@ public class Library implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private String target;
+    private String ower;
     private String description;
     @ManyToOne
     @JoinColumn(name = "categoryId")
@@ -36,12 +36,12 @@ public class Library implements Serializable {
         this.name = name;
     }
 
-    public String getTarget() {
-        return target;
+    public String getOwer() {
+        return ower;
     }
 
-    public void setTarget(String target) {
-        this.target = target;
+    public void setOwer(String ower) {
+        this.ower = ower;
     }
 
     public String getDescription() {
