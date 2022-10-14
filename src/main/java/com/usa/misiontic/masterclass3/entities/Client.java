@@ -1,6 +1,6 @@
 package com.usa.misiontic.masterclass3.entities;
 
-import jdk.internal.joptsimple.internal.Messages;
+
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -66,5 +66,5 @@ public class Client implements Serializable {
     }
 
 
-    
+
 }
