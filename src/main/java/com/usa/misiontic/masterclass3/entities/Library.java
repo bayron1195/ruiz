@@ -13,7 +13,9 @@ public class Library implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private String ower;
+    private String owner;
+
+    private Integer capacity;
     private String description;
     @ManyToOne
     @JoinColumn(name = "categoryId")
@@ -36,12 +38,12 @@ public class Library implements Serializable {
         this.name = name;
     }
 
-    public String getOwer() {
-        return ower;
+    public String getOwner() {
+        return owner;
     }
 
-    public void setOwer(String ower) {
-        this.ower = ower;
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     public String getDescription() {
@@ -58,5 +60,13 @@ public class Library implements Serializable {
 
     public void setCategory(Category category) {
         this.category = category;
+    }
+
+    public Integer getCapacity() {
+        return capacity;
+    }
+
+    public void setCapacity(Integer Capacity) {
+        this.capacity = capacity;
     }
 }
