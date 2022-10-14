@@ -23,11 +23,7 @@ public class Audience implements Serializable {
     @JsonIgnoreProperties("libs")
     private Category category;
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "audience")
-    private List<Message> message;
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "audience")
-    private List<Reservas> reservations;
 
     public Integer getId() {
         return id;
