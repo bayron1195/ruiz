@@ -16,14 +16,13 @@ public class Category implements Serializable {
     private String name;
     private String description;
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
+    
     @JsonIgnoreProperties("category")
     private List<Library> audiences;
 
 
 
-    @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "category")
-    @JsonIgnoreProperties("category")
+
 
 
 
@@ -55,7 +54,7 @@ public class Category implements Serializable {
         return audiences;
     }
 
-    public void setaudiences(List<Library> libs) {
+    public void setaudiences(List<Library> audiences) {
         this.audiences = audiences;
     }
 
