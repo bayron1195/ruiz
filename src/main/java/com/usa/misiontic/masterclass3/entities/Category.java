@@ -16,7 +16,7 @@ public class Category implements Serializable {
     private String name;
     private String description;
 
-    
+
     @JsonIgnoreProperties("category")
     private List<Library> audiences;
 

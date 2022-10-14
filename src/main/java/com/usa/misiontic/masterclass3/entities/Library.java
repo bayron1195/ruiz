@@ -16,9 +16,9 @@ public class Library implements Serializable {
     private String target;
     private String description;
     @ManyToOne
-    @JoinColumn(name = "categoryId")
+    @JoinColumn(name = "clientId")
     @JsonIgnoreProperties("libs")
-    private Category category;
+    private Client client;
 
     public Integer getId() {
         return id;
@@ -52,11 +52,11 @@ public class Library implements Serializable {
         this.description = description;
     }
 
-    public Category getCategory() {
-        return category;
+    public Client getClient() {
+        return client;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setClient(Client client) {
+        this.client = client;
     }
 }
