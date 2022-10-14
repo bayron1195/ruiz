@@ -19,11 +19,10 @@ public class Client implements Serializable {
     private String email;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
-    private List<Message> message;
+    private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
     private List<Reservas> reservas;
-
 
 
     public Integer getIdClient() {
@@ -67,20 +66,5 @@ public class Client implements Serializable {
     }
 
 
-    public List<Message> getMessage() {
-        return message;
-    }
-
-    public void setMessage(List<Message> message) {
-        this.message = message;
-    }
-
-
-    public List<Reservas> getreservas() {
-        return reservas;
-    }
-
-    public void setreservas(List<Reservas> reservas) {
-        this.reservas = reservas;
-    }
+    
 }
