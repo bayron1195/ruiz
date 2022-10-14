@@ -19,6 +19,9 @@ public class Message implements Serializable {
     @ManyToOne(cascade = {CascadeType.PERSIST})
     private Client client;
 
+    @ManyToOne(cascade = {CascadeType.PERSIST})
+    private Audience audience;
+
     @ManyToOne
     @JoinColumn(name = "categoryId")
     @JsonIgnoreProperties("message")

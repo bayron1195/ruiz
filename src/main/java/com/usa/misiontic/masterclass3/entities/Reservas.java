@@ -23,8 +23,12 @@ public class Reservas implements Serializable {
     @JsonIgnoreProperties("reservas")
     private Category category;
 
+
     @ManyToOne(cascade = {CascadeType.PERSIST})
     private Client client;
+
+    @ManyToOne(cascade = {CascadeType.PERSIST})
+    private Audience audience;
 
     public Integer getIdReserva() {
         return idReserva;
