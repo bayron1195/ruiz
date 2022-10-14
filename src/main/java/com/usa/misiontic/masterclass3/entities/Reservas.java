@@ -19,7 +19,7 @@ public class Reservas implements Serializable {
     private Date fechafin;
 
     @ManyToOne
-    @JoinColumn(name = "clientIId")
+    @JoinColumn(name = "clientId")
     @JsonIgnoreProperties("reser")
     private Client client;
 

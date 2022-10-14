@@ -17,7 +17,8 @@ public class Library implements Serializable {
     private String description;
     @ManyToOne
     @JoinColumn(name = "clientId")
-    @JsonIgnoreProperties("libs")
+    @JoinColumn(name = "categoryID")
+    @JsonIgnoreProperties("audiences")
     private Client client;
 
     public Integer getId() {
