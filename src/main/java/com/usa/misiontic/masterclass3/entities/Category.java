@@ -27,11 +27,11 @@ public class Category implements Serializable {
 
 
 
-    public Integer getIdCategory() {
+    public Integer getId() {
         return id;
     }
 
-    public void setIdCategory(Integer id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
