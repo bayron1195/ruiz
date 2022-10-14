@@ -21,7 +21,7 @@ public class Audience implements Serializable {
     private String description;
     @ManyToOne
     @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("libs")
+    @JsonIgnoreProperties("category")
     private Category category;
 
 
@@ -29,7 +29,7 @@ public class Audience implements Serializable {
     private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
-    private List<Reservas> reservations;
+    private List<Reservas> reservas;
 
 
     public Integer getId() {
