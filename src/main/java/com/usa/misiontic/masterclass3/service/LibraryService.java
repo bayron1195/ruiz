@@ -46,8 +46,8 @@ public class LibraryService {
                 if(p.getTarget()!=null){
                     q.get().setTarget(p.getTarget());
                 }
-                if(p.getCategory()!=null){
-                    q.get().setCategory(p.getCategory());
+                if(p.getClient()!=null){
+                    q.get().setClient(p.getClient());
                 }
 
                 libraryRepository.save(q.get());
