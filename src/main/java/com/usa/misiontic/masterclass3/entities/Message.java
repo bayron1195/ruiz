@@ -16,13 +16,13 @@ public class Message implements Serializable {
     private String messageText;
 
 
-    @ManyToOne(cascade = {CascadeType.PERSIST})
+    @ManyToOne
     @JoinColumn(name = "clientId")
 
     @JsonIgnoreProperties({"message","reservations"})
     private Client client;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST})
+    @ManyToOne
     @JoinColumn(name = "audience")
 
     @JsonIgnoreProperties({"message","reservations"})
@@ -46,4 +46,19 @@ public class Message implements Serializable {
         this.messageText = messageText;
     }
 
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Audience getAudience() {
+        return audience;
+    }
+
+    public void setAudience(Audience audience) {
+        this.audience = audience;
+    }
 }

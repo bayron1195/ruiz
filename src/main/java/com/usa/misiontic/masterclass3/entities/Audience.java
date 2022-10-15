@@ -81,6 +81,7 @@ public class Audience implements Serializable {
         this.capacity = capacity;
     }
 
+
     public List<Message> getMessages() {
         return messages;
     }
@@ -89,11 +90,11 @@ public class Audience implements Serializable {
         this.messages = messages;
     }
 
-    public List<Reservation> getReservation() {
+    public List<Reservation> getReservations() {
         return reservations;
     }
 
-    public void setReservation(List<Reservation> reservations) {
+    public void setReservations(List<Reservation> reservations) {
         this.reservations = reservations;
     }
 }

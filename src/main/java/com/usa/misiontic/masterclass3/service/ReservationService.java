@@ -25,10 +25,11 @@ public class ReservationService {
             return reservationsRepository.save(p);
         }else{
             Optional<Reservation> e = reservationsRepository.getReservation(p.getIdReservation());
-            if(e.isPresent()){
-                return p;
-            }else{
+            if(e.isEmpty()){
                 return reservationsRepository.save(p);
+
+            }else{
+                return p;
             }
         }
     }
@@ -40,8 +41,8 @@ public class ReservationService {
                     q.get().setIdReservation(p.getIdReservation());
                 }
 
-                if(p.getClient()!=null){
-                    q.get().setClient(p.getClient());
+                if(p.getStatus()!=null){
+                    q.get().setStatus(p.getStatus());
                 }
                 if(p.getStartDate()!=null){
                     q.get().setStartDate(p.getStartDate());

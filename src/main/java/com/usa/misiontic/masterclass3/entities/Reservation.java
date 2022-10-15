@@ -14,9 +14,10 @@ public class Reservation implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
 
-    private String Client;
+    private String status = "created";
     private Date startDate;
     private Date devolutionDate;
+
 
 
 
@@ -25,10 +26,7 @@ public class Reservation implements Serializable {
 
     @JsonIgnoreProperties({"reservations","messages"})
     private Audience audience;
-    @ManyToOne
-    @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("reservations")
-    private Category category;
+
 
     @ManyToOne
     @JoinColumn(name = "clientId")
@@ -53,12 +51,12 @@ public class Reservation implements Serializable {
 
 
 
-    public String getClient() {
-        return Client;
+    public String getStatus() {
+        return status;
     }
 
-    public void setClient(String client) {
-        this.Client = client;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public Date getStartDate() {
@@ -77,11 +75,27 @@ public class Reservation implements Serializable {
         this.devolutionDate = devolutionDate;
     }
 
-    public Category getCategory() {
-        return category;
+    public Audience getAudience() {
+        return audience;
     }
 
-    public void setCategory(Category category) {
-        this.category = category;
+    public void setAudience(Audience audience) {
+        this.audience = audience;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Score getScore() {
+        return score;
+    }
+
+    public void setScore(Score score) {
+        this.score = score;
     }
 }

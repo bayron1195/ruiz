@@ -25,10 +25,11 @@ public class MessageService {
             return messageRepository.save(p);
         }else{
             Optional<Message> e =messageRepository.getMessage(p.getIdMessage());
-            if(e.isPresent()){
-                return p;
-            }else{
+            if(e.isEmpty()){
                 return messageRepository.save(p);
+
+            }else{
+                return p;
             }
         }
     }
