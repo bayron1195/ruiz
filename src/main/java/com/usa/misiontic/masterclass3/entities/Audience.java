@@ -29,7 +29,7 @@ public class Audience implements Serializable {
     private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "audience")
-    @JsonIgnoreProperties({"audience","category"})
+    @JsonIgnoreProperties({"audience","messages"})
     private List<Reservation> reservations;
 
 
