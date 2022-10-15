@@ -1,6 +1,7 @@
 package com.usa.misiontic.masterclass3.controller;
 
 
+import com.usa.misiontic.masterclass3.entities.Category;
 import com.usa.misiontic.masterclass3.entities.Client;
 import com.usa.misiontic.masterclass3.service.ClientService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/Client")
@@ -20,9 +22,24 @@ public class ClientController {
     public List<Client> getAll(){
         return clientService.getAll();
     }
+
+
+
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Client save(@RequestBody  Client c){
         return clientService.save(c);
+    }
+
+    @PutMapping("/update")
+    @ResponseStatus(HttpStatus.CREATED)
+    public Client update(@RequestBody  Client p){
+        return clientService.update(p);
+    }
+    @DeleteMapping("/{id}")
+    @ResponseStatus (HttpStatus.NO_CONTENT)
+    public boolean delete(@PathVariable("id") int id){
+
+        return clientService.delete(id);
     }
 }

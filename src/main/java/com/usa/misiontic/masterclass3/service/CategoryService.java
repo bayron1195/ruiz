@@ -36,9 +36,14 @@ public class CategoryService {
         if(p.getId()!=null){
             Optional<Category> q = categoryRepository.getCategory(p.getId());
             if(q.isPresent()){
+                if(p.getDescription()!=null){
+                    q.get().setDescription(p.getDescription());
+                }
                 if(p.getName()!=null){
                     q.get().setName(p.getName());
+
                 }
+
                 categoryRepository.save(q.get());
                 return q.get();
             }else{
