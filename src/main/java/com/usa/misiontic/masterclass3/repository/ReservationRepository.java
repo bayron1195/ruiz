@@ -2,7 +2,7 @@ package com.usa.misiontic.masterclass3.repository;
 
 
 import com.usa.misiontic.masterclass3.entities.Reservation;
-import com.usa.misiontic.masterclass3.repository.crudRepository.ReservasCrudRepository;
+import com.usa.misiontic.masterclass3.repository.crudRepository.ReservationCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -13,18 +13,18 @@ import java.util.Optional;
 public class ReservationRepository {
 
     @Autowired
-    private ReservasCrudRepository reservasCrudRepository;
+    private ReservationCrudRepository reservationCrudRepository;
     public List<Reservation> getAll(){
-        return (List<Reservation>) reservasCrudRepository.findAll();
+        return (List<Reservation>) reservationCrudRepository.findAll();
     }
     public Optional<Reservation> getReservation(int id){
-        return reservasCrudRepository.findById(id);
+        return reservationCrudRepository.findById(id);
     }
     public Reservation save(Reservation p){
-        return reservasCrudRepository.save(p);
+        return reservationCrudRepository.save(p);
     }
     public void delete(Reservation p){
-        reservasCrudRepository.delete(p);
+        reservationCrudRepository.delete(p);
     }
 
 }
