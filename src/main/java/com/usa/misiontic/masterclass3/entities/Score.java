@@ -3,7 +3,8 @@ package com.usa.misiontic.masterclass3.entities;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-
+@Entity
+@Table(name = "score")
 public class Score {
 
     @Id
