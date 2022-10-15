@@ -39,8 +39,12 @@ public class ClientService {
         if(p.getIdClient()!=null){
             Optional<Client> q = clientRepository.getClient(p.getIdClient());
             if(q.isPresent()){
+                if(p.getAge()!=null){
+                    q.get().setAge(p.getAge());
+                }
                 if(p.getName()!=null){
                     q.get().setName(p.getName());
+
                 }
                 clientRepository.save(q.get());
                 return q.get();
