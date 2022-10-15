@@ -17,10 +17,14 @@ public class Message implements Serializable {
 
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
+    @JoinColumn(name = "clientId")
+
     @JsonIgnoreProperties({"message","reservations"})
     private Client client;
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
+    @JoinColumn(name = "audience")
+
     @JsonIgnoreProperties({"message","reservations"})
     private Audience audience;
 

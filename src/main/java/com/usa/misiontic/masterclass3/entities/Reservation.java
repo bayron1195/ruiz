@@ -21,6 +21,8 @@ public class Reservation implements Serializable {
 
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
+    @JoinColumn(name = "audienceId")
+
     @JsonIgnoreProperties({"reservations","messages"})
     private Audience audience;
     @ManyToOne
@@ -29,6 +31,8 @@ public class Reservation implements Serializable {
     private Category category;
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
+    @JoinColumn(name = "clientId")
+
     @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
 
