@@ -39,9 +39,7 @@ public class ReservationService {
                 if(p.getIdReservation()!=null){
                     q.get().setIdReservation(p.getIdReservation());
                 }
-                if(p.getPalco()!=null){
-                    q.get().setPalco(p.getPalco());
-                }
+
                 if(p.getClient()!=null){
                     q.get().setClient(p.getClient());
                 }

@@ -13,7 +13,7 @@ public class Reservation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
-    private String palco;
+
     private String Client;
     private Date startDate;
     private Date devolutionDate;
@@ -40,13 +40,7 @@ public class Reservation implements Serializable {
         this.idReservation = id;
     }
 
-    public String getPalco() {
-        return palco;
-    }
 
-    public void setPalco(String palco) {
-        this.palco = palco;
-    }
 
     public String getClient() {
         return Client;
