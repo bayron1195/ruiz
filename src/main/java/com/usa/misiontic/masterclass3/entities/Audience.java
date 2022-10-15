@@ -21,14 +21,16 @@ public class Audience implements Serializable {
     private String description;
     @ManyToOne
     @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("category")
+    @JsonIgnoreProperties({"category","audiences"})
     private Category category;
 
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
+    @JsonIgnoreProperties({"audience","client"})
     private List<Message> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
+    @JsonIgnoreProperties({"audience","category"})
     private List<Reservas> reservas;
 
 

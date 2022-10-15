@@ -20,6 +20,7 @@ public class Message implements Serializable {
     private Client client;
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
+    @JsonIgnoreProperties("message")
     private Audience audience;
 
     @ManyToOne

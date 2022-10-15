@@ -2,6 +2,8 @@ package com.usa.misiontic.masterclass3.entities;
 
 
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
@@ -19,9 +21,12 @@ public class Client implements Serializable {
     private String email;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
+    @JsonIgnoreProperties ("client")
     private List<Message> messages;
 
+
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
+    @JsonIgnoreProperties ("client")
     private List<Reservas> reservas;
 
 

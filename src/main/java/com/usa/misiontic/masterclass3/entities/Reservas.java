@@ -12,7 +12,7 @@ public class Reservas implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idReserva;
+    private Integer idReservation;
     private String palco;
     private String cliente;
     private Date fechainicio;
@@ -25,17 +25,19 @@ public class Reservas implements Serializable {
 
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
+    @JsonIgnoreProperties({"reservas","messages"})
     private Client client;
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
+    @JsonIgnoreProperties({"reservas","messages"})
     private Audience audience;
 
     public Integer getIdReserva() {
-        return idReserva;
+        return idReservation;
     }
 
     public void setIdReserva(Integer id) {
-        this.idReserva = id;
+        this.idReservation = id;
     }
 
     public String getPalco() {
