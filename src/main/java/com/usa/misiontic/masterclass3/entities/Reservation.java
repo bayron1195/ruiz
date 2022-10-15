@@ -13,10 +13,10 @@ public class Reservation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String palco;
-    private String cliente;
-    private Date fechainicio;
-    private Date fechafin;
+
+    private String Client;
+    private Date startDate;
+    private Date devolutionDate;
 
     @ManyToOne
     @JoinColumn(name = "categoryId")
@@ -40,36 +40,31 @@ public class Reservation implements Serializable {
         this.id = id;
     }
 
-    public String getPalco() {
-        return palco;
+
+
+
+    public String getClient() {
+        return Client;
     }
 
-    public void setPalco(String palco) {
-        this.palco = palco;
+    public void setClient(String client) {
+        this.Client = client;
     }
 
-    public String getCliente() {
-        return cliente;
+    public Date getStartDate() {
+        return startDate;
     }
 
-    public void setCliente(String cliente) {
-        this.cliente = cliente;
+    public void setStartDate(Date startDate) {
+        this.startDate = startDate;
     }
 
-    public Date getFechainicio() {
-        return fechainicio;
+    public Date getDevolutionDate() {
+        return devolutionDate;
     }
 
-    public void setFechainicio(Date fechainicio) {
-        this.fechainicio = fechainicio;
-    }
-
-    public Date getFechafin() {
-        return fechafin;
-    }
-
-    public void setFechafin(Date fechafin) {
-        this.fechafin = fechafin;
+    public void setDevolutionDate(Date devolutionDate) {
+        this.devolutionDate = devolutionDate;
     }
 
     public Category getCategory() {

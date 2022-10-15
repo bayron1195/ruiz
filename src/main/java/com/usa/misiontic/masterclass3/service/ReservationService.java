@@ -42,14 +42,14 @@ public class ReservationService {
                 if(p.getPalco()!=null){
                     q.get().setPalco(p.getPalco());
                 }
-                if(p.getCliente()!=null){
-                    q.get().setCliente(p.getCliente());
+                if(p.getClient()!=null){
+                    q.get().setClient(p.getClient());
                 }
-                if(p.getFechainicio()!=null){
-                    q.get().setFechainicio(p.getFechainicio());
+                if(p.getStartDate()!=null){
+                    q.get().setStartDate(p.getStartDate());
                 }
-                if(p.getFechafin()!=null){
-                    q.get().setFechafin(p.getFechafin());
+                if(p.getDevolutionDate()!=null){
+                    q.get().setDevolutionDate(p.getDevolutionDate());
                 }
                 reservationRepository.save(q.get());
                 return q.get();
