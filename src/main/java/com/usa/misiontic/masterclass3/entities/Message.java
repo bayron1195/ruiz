@@ -44,27 +44,4 @@ public class Message implements Serializable {
         this.messageText = messageText;
     }
 
-    public Client getClient() {
-        return client;
-    }
-
-    public void setClient(Client client) {
-        this.client = client;
-    }
-
-    public Audience getAudience() {
-        return audience;
-    }
-
-    public void setAudience(Audience audience) {
-        this.audience = audience;
-    }
-
-    public Category getCategory() {
-        return category;
-    }
-
-    public void setCategory(Category category) {
-        this.category = category;
-    }
 }
