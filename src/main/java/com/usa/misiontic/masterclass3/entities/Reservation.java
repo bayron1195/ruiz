@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "reservations")
+@Table(name = "reservation")
 public class Reservation implements Serializable {
 
     @Id
@@ -34,7 +34,7 @@ public class Reservation implements Serializable {
 
 
 
-    @OneToOne(cascade = {CascadeType.PERSIST},mappedBy="reservations")
+    @OneToOne(cascade = {CascadeType.REMOVE},mappedBy="reservation")
     @JsonIgnoreProperties("reservation")
     private Score score;
 
