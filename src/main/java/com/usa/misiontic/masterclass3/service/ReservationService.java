@@ -12,29 +12,29 @@ import java.util.Optional;
 @Service
 public class ReservationService {
     @Autowired
-    private ReservationRepository reservationRepository;
+    private ReservationRepository reservationsRepository;
 
     public List<Reservation> getAll(){
-        return reservationRepository.getAll();
+        return reservationsRepository.getAll();
     }
     public Optional<Reservation> getProduct(int id){
-        return reservationRepository.getReservation(id);
+        return reservationsRepository.getReservation(id);
     }
     public Reservation save(Reservation p){
         if(p.getIdReservation()==null){
-            return reservationRepository.save(p);
+            return reservationsRepository.save(p);
         }else{
-            Optional<Reservation> e =reservationRepository.getReservation(p.getIdReservation());
+            Optional<Reservation> e = reservationsRepository.getReservation(p.getIdReservation());
             if(e.isPresent()){
                 return p;
             }else{
-                return reservationRepository.save(p);
+                return reservationsRepository.save(p);
             }
         }
     }
     public Reservation update(Reservation p){
         if(p.getIdReservation()!=null){
-            Optional<Reservation> q =reservationRepository.getReservation(p.getIdReservation());
+            Optional<Reservation> q = reservationsRepository.getReservation(p.getIdReservation());
             if(q.isPresent()){
                 if(p.getIdReservation()!=null){
                     q.get().setIdReservation(p.getIdReservation());
@@ -49,7 +49,7 @@ public class ReservationService {
                 if(p.getDevolutionDate()!=null){
                     q.get().setDevolutionDate(p.getDevolutionDate());
                 }
-                reservationRepository.save(q.get());
+                reservationsRepository.save(q.get());
                 return q.get();
             }else{
                 return p;
@@ -60,9 +60,9 @@ public class ReservationService {
     }
     public boolean delete(int id){
         boolean flag=false;
-        Optional<Reservation>p=reservationRepository.getReservation(id);
+        Optional<Reservation>p= reservationsRepository.getReservation(id);
         if(p.isPresent()){
-            reservationRepository.delete(p.get());
+            reservationsRepository.delete(p.get());
             flag=true;
         }
         return flag;

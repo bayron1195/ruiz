@@ -16,7 +16,6 @@ public class Audience implements Serializable {
     private Integer id;
     private String name;
     private String owner;
-
     private Integer capacity;
     private String description;
     @ManyToOne

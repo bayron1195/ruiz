@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "reservation")
+@Table(name = "reservations")
 public class Reservation implements Serializable {
 
     @Id
@@ -20,16 +20,16 @@ public class Reservation implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("reservation")
+    @JsonIgnoreProperties("reservations")
     private Category category;
 
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
-    @JsonIgnoreProperties({"reservation","messages"})
+    @JsonIgnoreProperties({"reservations","messages"})
     private Client client;
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
-    @JsonIgnoreProperties({"reservation","messages"})
+    @JsonIgnoreProperties({"reservations","messages"})
     private Audience audience;
 
     public Integer getIdReservation() {

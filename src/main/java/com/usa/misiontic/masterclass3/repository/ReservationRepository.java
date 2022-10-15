@@ -13,18 +13,18 @@ import java.util.Optional;
 public class ReservationRepository {
 
     @Autowired
-    private ReservationCrudRepository reservationCrudRepository;
+    private ReservationCrudRepository reservationsCrudRepository;
     public List<Reservation> getAll(){
-        return (List<Reservation>) reservationCrudRepository.findAll();
+        return (List<Reservation>) reservationsCrudRepository.findAll();
     }
     public Optional<Reservation> getReservation(int id){
-        return reservationCrudRepository.findById(id);
+        return reservationsCrudRepository.findById(id);
     }
     public Reservation save(Reservation p){
-        return reservationCrudRepository.save(p);
+        return reservationsCrudRepository.save(p);
     }
     public void delete(Reservation p){
-        reservationCrudRepository.delete(p);
+        reservationsCrudRepository.delete(p);
     }
 
 }
