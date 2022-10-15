@@ -18,12 +18,12 @@ public class Message implements Serializable {
     @ManyToOne
     @JoinColumn(name = "audience")
 
-    @JsonIgnoreProperties({"message","reservations"})
+    @JsonIgnoreProperties({"messages","reservations"})
     private Audience audience;
 
     @ManyToOne
     @JoinColumn(name = "clientId")
-    @JsonIgnoreProperties({"message","reservations"})
+    @JsonIgnoreProperties({"messages","reservations"})
     private Client client;
 
 
@@ -42,7 +42,7 @@ public class Message implements Serializable {
     }
 
     public void setMessageText(String message) {
-        this.messageText = messageText;
+        this.messageText = message;
     }
 
 

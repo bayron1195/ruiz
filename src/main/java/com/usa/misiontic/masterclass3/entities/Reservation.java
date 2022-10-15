@@ -13,10 +13,12 @@ public class Reservation implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
-
-    private String status = "created";
     private Date startDate;
+
     private Date devolutionDate;
+    private String status = "created";
+
+
 
 
 
@@ -24,7 +26,7 @@ public class Reservation implements Serializable {
     @ManyToOne
     @JoinColumn(name = "audienceId")
 
-    @JsonIgnoreProperties({"reservations","messages"})
+    @JsonIgnoreProperties({"reservations"})
     private Audience audience;
 
 
