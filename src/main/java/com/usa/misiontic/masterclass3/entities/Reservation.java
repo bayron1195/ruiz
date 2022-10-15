@@ -7,12 +7,12 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "reservas")
-public class Reservas implements Serializable {
+@Table(name = "reservation")
+public class Reservation implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idReservation;
+    private Integer id;
     private String palco;
     private String cliente;
     private Date fechainicio;
@@ -20,24 +20,24 @@ public class Reservas implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "categoryId")
-    @JsonIgnoreProperties("reservas")
+    @JsonIgnoreProperties("reservation")
     private Category category;
 
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
-    @JsonIgnoreProperties({"reservas","messages"})
+    @JsonIgnoreProperties({"reservation","messages"})
     private Client client;
 
     @ManyToOne(cascade = {CascadeType.PERSIST})
-    @JsonIgnoreProperties({"reservas","messages"})
+    @JsonIgnoreProperties({"reservation","messages"})
     private Audience audience;
 
-    public Integer getIdReserva() {
-        return idReservation;
+    public Integer getIdReservation() {
+        return id;
     }
 
-    public void setIdReserva(Integer id) {
-        this.idReservation = id;
+    public void setIdReservation(Integer id) {
+        this.id = id;
     }
 
     public String getPalco() {

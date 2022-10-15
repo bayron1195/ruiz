@@ -31,7 +31,7 @@ public class Audience implements Serializable {
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "client")
     @JsonIgnoreProperties({"audience","category"})
-    private List<Reservas> reservas;
+    private List<Reservation> reservation;
 
 
     public Integer getId() {
@@ -81,4 +81,6 @@ public class Audience implements Serializable {
     public void setCapacity(Integer capacity) {
         this.capacity = capacity;
     }
+
+
 }

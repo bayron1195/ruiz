@@ -1,8 +1,8 @@
 package com.usa.misiontic.masterclass3.service;
 
 
-import com.usa.misiontic.masterclass3.entities.Reservas;
-import com.usa.misiontic.masterclass3.repository.ReservasRepository;
+import com.usa.misiontic.masterclass3.entities.Reservation;
+import com.usa.misiontic.masterclass3.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,34 +10,34 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ReservasService {
+public class ReservationService {
     @Autowired
-    private ReservasRepository reservasRepository;
+    private ReservationRepository reservationRepository;
 
-    public List<Reservas> getAll(){
-        return reservasRepository.getAll();
+    public List<Reservation> getAll(){
+        return reservationRepository.getAll();
     }
-    public Optional<Reservas> getProduct(int id){
-        return reservasRepository.getReservas(id);
+    public Optional<Reservation> getProduct(int id){
+        return reservationRepository.getReservation(id);
     }
-    public Reservas save(Reservas p){
-        if(p.getIdReserva()==null){
-            return reservasRepository.save(p);
+    public Reservation save(Reservation p){
+        if(p.getIdReservation()==null){
+            return reservationRepository.save(p);
         }else{
-            Optional<Reservas> e =reservasRepository.getReservas(p.getIdReserva());
+            Optional<Reservation> e =reservationRepository.getReservation(p.getIdReservation());
             if(e.isPresent()){
                 return p;
             }else{
-                return reservasRepository.save(p);
+                return reservationRepository.save(p);
             }
         }
     }
-    public Reservas update(Reservas p){
-        if(p.getIdReserva()!=null){
-            Optional<Reservas> q =reservasRepository.getReservas(p.getIdReserva());
+    public Reservation update(Reservation p){
+        if(p.getIdReservation()!=null){
+            Optional<Reservation> q =reservationRepository.getReservation(p.getIdReservation());
             if(q.isPresent()){
-                if(p.getIdReserva()!=null){
-                    q.get().setIdReserva(p.getIdReserva());
+                if(p.getIdReservation()!=null){
+                    q.get().setIdReservation(p.getIdReservation());
                 }
                 if(p.getPalco()!=null){
                     q.get().setPalco(p.getPalco());
@@ -51,7 +51,7 @@ public class ReservasService {
                 if(p.getFechafin()!=null){
                     q.get().setFechafin(p.getFechafin());
                 }
-                reservasRepository.save(q.get());
+                reservationRepository.save(q.get());
                 return q.get();
             }else{
                 return p;
@@ -62,9 +62,9 @@ public class ReservasService {
     }
     public boolean delete(int id){
         boolean flag=false;
-        Optional<Reservas>p=reservasRepository.getReservas(id);
+        Optional<Reservation>p=reservationRepository.getReservation(id);
         if(p.isPresent()){
-            reservasRepository.delete(p.get());
+            reservationRepository.delete(p.get());
             flag=true;
         }
         return flag;
