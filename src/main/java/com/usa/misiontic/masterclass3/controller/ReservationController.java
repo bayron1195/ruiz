@@ -3,6 +3,7 @@ package com.usa.misiontic.masterclass3.controller;
 
 import com.usa.misiontic.masterclass3.entities.Reservation;
 import com.usa.misiontic.masterclass3.entities.dto.StatusAccount;
+import com.usa.misiontic.masterclass3.entities.dto.TopClients;
 import com.usa.misiontic.masterclass3.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,6 +31,11 @@ public class ReservationController {
     @GetMapping("/report-status")
     public StatusAccount getByStatus(){
         return reservationsService.getReportByStatus();
+    }
+
+    @GetMapping("/report-clients")
+    public List<TopClients> getTopClients(){
+        return reservationsService.getTopclients();
     }
 
 }

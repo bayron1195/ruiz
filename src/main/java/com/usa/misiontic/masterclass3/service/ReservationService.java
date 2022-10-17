@@ -1,13 +1,17 @@
 package com.usa.misiontic.masterclass3.service;
 
 
+import com.usa.misiontic.masterclass3.entities.Client;
 import com.usa.misiontic.masterclass3.entities.Reservation;
 import com.usa.misiontic.masterclass3.entities.dto.StatusAccount;
+import com.usa.misiontic.masterclass3.entities.dto.TopClients;
 import com.usa.misiontic.masterclass3.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -79,5 +83,17 @@ public class ReservationService {
         return resultado;
     }
 
+    public List<TopClients>getTopclients(){
+    List<TopClients>tc=new ArrayList<>();
+    List<Object[]>result=reservationsRepository.getTopClients();
 
+    for (int i=0;i<result.size();i++){
+        int total=Integer.parseInt(result.get(i)[1].toString());
+        Client client= (Client) result.get(i)[0];
+        TopClients topClient=new TopClients(total,client);
+        tc.add(topClient);
+        }
+
+        return tc;
+    }
 }

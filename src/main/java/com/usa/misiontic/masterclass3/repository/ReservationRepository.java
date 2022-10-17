@@ -33,5 +33,10 @@ public class ReservationRepository {
         return reservationsCrudRepository.findAllByStatus(sts);
     }
 
+    public List<Object[]> getTopClients(){
+        return reservationsCrudRepository.getTopClients();
+
+    }
+
 
 }
