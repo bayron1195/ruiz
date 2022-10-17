@@ -32,6 +32,7 @@ function guardarCliente(){
         name:nombre,
         email:mailCliente,
         age:edad
+        password:password
     };
     let dataToSend=JSON.stringify(data);
     //console.log(dataToSend);
@@ -48,6 +49,7 @@ function guardarCliente(){
             $("#nombreCliente").val("");
             $("#mailCliente").val("");
             $("#edadCliente").val("");
+             $("#password").val("");
 
         },
         error : function(xhr, status) {
@@ -170,7 +172,7 @@ function borrarDatos(Id){
     };
     let dataToSend = JSON.stringify(datos);
     $.ajax({
-        url: "http://129.151.107.191/api/Auditorio/all",
+        url: "http://129.151.107.191/api/Audience/",
         
         type: "DELETE",
         data:dataToSend,
@@ -232,7 +234,7 @@ function updateData(){
     let dataToSend = JSON.stringify(datos); 
     $.ajax({
 
-        url: "http://129.151.107.191/api/Client/update",
+        url: "http://129.151.107.191/api/Audience/update",
        
         type: "PUT",
         data:dataToSend,
