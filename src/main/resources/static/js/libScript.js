@@ -3,7 +3,7 @@ $(document).ready(function (){
     getAudience();
 });
 
-function getFrontLibData(){
+function getFrontAudienceData(){
     let k={
         id:$("#idAudience").val(),
         name:$("#nameAudiencey").val(),
