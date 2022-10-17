@@ -34,16 +34,16 @@ public class ReservationService {
     public List<Reservation> getReservationsByPeriod(String dateA,String dateB){
 
         SimpleDateFormat parser=new SimpleDateFormat("yyyy-MM-dd");
-        Date a= new Date();
-        Date b=new Date();
+        Date f= new Date();
+        Date g= new Date();
         try {
-            a=parser.parse(dateA);
-            b=parser.parse(dateB);
+            f=parser.parse(dateA);
+            g=parser.parse(dateB);
         }catch (ParseException e){
             e.printStackTrace();;
         }
-        if(a.before(b)){
-            return reservationsRepository.getDatesReport((java.sql.Date) a, (java.sql.Date) b);
+        if(f.before(g)){
+            return reservationsRepository.getDatesReport((java.sql.Date) f, (java.sql.Date) g);
         }else{
             return new ArrayList<Reservation>();
         }
