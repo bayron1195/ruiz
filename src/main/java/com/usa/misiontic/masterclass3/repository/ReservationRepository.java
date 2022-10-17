@@ -27,4 +27,11 @@ public class ReservationRepository {
         reservationsCrudRepository.delete(p);
     }
 
+
+    public List<Reservation>getStatusReport(String sts){
+
+        return reservationsCrudRepository.findAllByStatus(sts);
+    }
+
+
 }

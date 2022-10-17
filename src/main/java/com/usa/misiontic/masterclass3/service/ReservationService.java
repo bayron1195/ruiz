@@ -2,6 +2,7 @@ package com.usa.misiontic.masterclass3.service;
 
 
 import com.usa.misiontic.masterclass3.entities.Reservation;
+import com.usa.misiontic.masterclass3.entities.dto.StatusAccount;
 import com.usa.misiontic.masterclass3.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -68,6 +69,14 @@ public class ReservationService {
         }
         return flag;
 
+    }
+
+    public StatusAccount getReportByStatus(){
+        List<Reservation> completes=reservationsRepository.getStatusReport("completed");
+        List<Reservation> cancelled=reservationsRepository.getStatusReport("cancelled");
+
+        StatusAccount resultado=new StatusAccount(completes.size(),cancelled.size());
+        return resultado;
     }
 
 
