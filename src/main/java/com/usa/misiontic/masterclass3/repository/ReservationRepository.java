@@ -6,6 +6,7 @@ import com.usa.misiontic.masterclass3.repository.crudRepository.ReservationCrudR
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -28,6 +29,10 @@ public class ReservationRepository {
     }
 
 
+    public List<Reservation> getDatesReport(Date inicio, Date fin){
+        return reservationsCrudRepository.findAllByStartDateAfterAndStartDateBefore(inicio,fin);
+    }
+
     public List<Reservation>getStatusReport(String sts){
 
         return reservationsCrudRepository.findAllByStatus(sts);
@@ -37,6 +42,7 @@ public class ReservationRepository {
         return reservationsCrudRepository.getTopClients();
 
     }
+
 
 
 }
