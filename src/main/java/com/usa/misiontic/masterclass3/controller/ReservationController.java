@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-
 import java.util.List;
 
 @RestController
@@ -15,19 +14,15 @@ import java.util.List;
 public class ReservationController {
 
     @Autowired
-    private ReservationService reservationService;
+    private ReservationService reservationsService;
 
     @GetMapping("/all")
     public List<Reservation> getAll(){
-        return reservationService.getAll();
+        return reservationsService.getAll();
     }
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Reservation save(@RequestBody  Reservation p){
-        return reservationService.save(p);
+        return reservationsService.save(p);
     }
-
-
-
-
 }

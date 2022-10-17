@@ -18,12 +18,12 @@ public class Message implements Serializable {
     @ManyToOne
     @JoinColumn(name = "audience")
 
-    @JsonIgnoreProperties({"messages","reservation"})
+    @JsonIgnoreProperties({"messages","reservations"})
     private Audience audience;
 
     @ManyToOne
     @JoinColumn(name = "clientId")
-    @JsonIgnoreProperties({"messages","reservation"})
+    @JsonIgnoreProperties({"messages","reservations"})
     private Client client;
 
 
