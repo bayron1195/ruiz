@@ -26,6 +26,8 @@ function guardarCliente(){
     let nombre=$("#nombreCliente").val();
     let mailCliente=$("#mailCliente").val();
     let edad=$("#edadCliente").val();
+     let password=$("#password").val();
+
 
     let data={
         id:idCliente,
@@ -67,12 +69,14 @@ function editarCliente(){
     let nombre=$("#nombreCliente").val();
     let mailCliente=$("#mailCliente").val();
     let edad=$("#edadCliente").val();
+    let password=$("#password").val();
 
     let data={
         id:idCliente,
         name:nombre,
         email:mailCliente,
         age:edad
+        password:password
     };
     let dataToSend=JSON.stringify(data);
     console.log(dataToSend);
@@ -89,6 +93,7 @@ function editarCliente(){
             $("#nombreCliente").val("");
             $("#mailCliente").val("");
             $("#edadCliente").val("");
+             $("#password").val("");
 
         },
         error : function(xhr, status) {
