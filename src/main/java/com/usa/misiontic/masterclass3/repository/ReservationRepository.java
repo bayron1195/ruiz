@@ -14,33 +14,22 @@ import java.util.Optional;
 public class ReservationRepository {
 
     @Autowired
-    private ReservationCrudRepository reservationsCrudRepository;
+    private ReservationCrudRepository reservationCrudRepository;
     public List<Reservation> getAll(){
-        return (List<Reservation>) reservationsCrudRepository.findAll();
+        return (List<Reservation>) reservationCrudRepository.findAll();
     }
     public Optional<Reservation> getReservation(int id){
-        return reservationsCrudRepository.findById(id);
+        return reservationCrudRepository.findById(id);
     }
     public Reservation save(Reservation p){
-        return reservationsCrudRepository.save(p);
+        return reservationCrudRepository.save(p);
     }
     public void delete(Reservation p){
-        reservationsCrudRepository.delete(p);
+        reservationCrudRepository.delete(p);
     }
 
 
-    public List<Reservation>getDatesReport(Date inicio,Date fin){
-        return reservationsCrudRepository.findAllByStarDateAfterAndStartDateBefore(inicio,fin);
 
-    }
-
-    public List<Reservation>getStatusReport(String sts){
-        return  reservationsCrudRepository.findAllByStatus(sts);
-
-    }
-    public List<Object[]> getTopClients(){
-        return reservationsCrudRepository.getTopClients();
-    }
 
 
 }
