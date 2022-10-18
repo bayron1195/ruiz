@@ -30,7 +30,7 @@ public class ReservationController {
     }
 
 
-    @GetMapping("/report-dates/{dateA}/{dateB}")
+    @GetMapping("report-dates/2020-01-01/2020-12-31'")
     public List<Reservation> getByDates(@PathVariable("dateA")String da,@PathVariable("dateB")String db ){
         return reservationsService.getReservationsByPeriod(da,db);
     }
